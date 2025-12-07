@@ -1,0 +1,104 @@
+---
+title: "PALOMINO_SAUÑER"
+author: "SEMANA_14_PALOMINO"
+format: html
+editor: visual
+---
+
+## Quarto
+
+Quarto enables you to weave together content and executable code into a finished document. To learn more about Quarto see <https://quarto.org>.
+
+## Running Code
+
+When you click the **Render** button a document will be generated that includes both content and the output of embedded code. You can embed code like this:
+
+```{r}
+data<- read_csv("C:/Users/USUARIO.DESKTOP-DQU96MQ/Downloads/s13_hemodialisis (1).csv")
+```
+
+You can add options to executable code like this
+
+```{r}
+#ver las 6 primeras filas 
+head(data)
+```
+
+T
+
+```{r}
+#estructutra de la data 
+str(data)
+```
+
+```{r}
+#medidda de tendencia central
+#media aritmetica
+mean(data $ talla)
+mean(data $ plaquetas)
+```
+
+```{r}
+#MEDIANA
+median(data$Talla)
+median(data$Plaquetas)
+```
+
+```{r}
+#MODA PLAQUETAS
+mode_edad<- names(sort(table(data$Plaquetas),decreasing = TRUE))
+```
+
+```{r}
+#MEDIDAS DE DISPERSION
+#VARIANZA
+var(data$Talla,na.rm = TRUE)
+var(data$Plaquetas,na.rm = TRUE)
+```
+
+```{r}
+#DESVIACION ESTANDAR
+sd(data$Talla,na.rm = TRUE)
+sd(data$Plaquetas,na.rm = TRUE)
+
+```
+
+```{r}
+#RANGO
+range(data$Talla,na.rm = TRUE)
+range(data$Plaquetas,na.rm = TRUE)
+```
+
+```{r}
+#RANGO INTERCUARTILICO
+IQR(data$Talla,na.rm = TRUE)
+IQR(data$Plaquetas,na.rm = TRUE)
+```
+
+```{r}
+#MEDIDAS DE POSICION
+quantile(data$Talla,probs = c(0.25,0.5,0.75,0.90),na.rm = TRUE)
+quantile(data$Plaquetas,probs = c(0.25,0.5,0.75,0.90),na.rm = TRUE)
+```
+
+```{r}
+#RESUMEN
+summary(data$Talla)
+summary(data$Plaquetas)
+```
+
+```{r}
+#RESUMEN DE TODAS LAS VARIABLES
+summary(data)
+```
+
+```{r}
+#VISUALIZACION GRAFICA
+#HISTOGRAMA
+ggplot(data,aes(x=Talla))+geom_histogram(bins = 30)+theme_minimal()
+ggplot(data,aes(x=Plaquetas))+geom_histogram(bins = 30)+theme_minimal()
+```
+
+```{r}
+
+```
